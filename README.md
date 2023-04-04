@@ -46,13 +46,16 @@
 ```yaml
 test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go_version: ['1.19','1.18','1.17','>=1.19']
     steps:
     - uses: actions/checkout@v3
 
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-        go-version: 1.19
+        go-version: ${{ matrix.go_version }}
 
     - name: Build-DB
       run: docker-compose build
@@ -62,6 +65,7 @@ test:
     
     - name: Test
       run: go test -v main_test.go
+
 ``` 
 - Criando a rotina de build
 ```yaml
