@@ -21,7 +21,7 @@
 
     sudo apt  install docker-compose
 ```
-
+---
 ## Fazendo a aplicação funcionar
 - 1 - Suba o banco com 
 ```bash
@@ -39,6 +39,42 @@
 ```bash
     go run -v main_test.go
 ```
+---
+## Configurando os actions no github
 
+- Criando a rotina de teste
+```yaml
+test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.19
+
+    - name: Build-DB
+      run: docker-compose build
+      
+    - name: Create-DB
+      run: docker-compose up -d
+    
+    - name: Test
+      run: go test -v main_test.go
+``` 
+- Criando a rotina de build
+```yaml
+build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build
+      run: go build -v main.go
+    
+``` 
+---
 ## Para saber mais
 - Os principais teste e porque utiliza-los: <a href="https://www.alura.com.br/artigos/tipos-de-testes-principais-por-que-utiliza-los">Testes</a>
