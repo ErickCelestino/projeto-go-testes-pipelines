@@ -79,6 +79,13 @@ build:
       run: go build -v main.go
     
 ``` 
+## Criando chaves secretas do repositório
+
+- 1 - Vá em settigns
+- 2 - Ir em environments
+- 3 - Ir em New environment
+
+
 ---
 ## Para saber mais
 - Os principais teste e porque utiliza-los: <a href="https://www.alura.com.br/artigos/tipos-de-testes-principais-por-que-utiliza-los">Testes</a>
