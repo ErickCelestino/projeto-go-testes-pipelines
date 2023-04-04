@@ -85,6 +85,8 @@ build:
 - 2 - Ir em environments
 - 3 - Ir em New environment
 
+![Criando chaves secretas](https://user-images.githubusercontent.com/99321670/229672016-dfae854f-f0df-45cd-818a-22c76297e35d.png)
+
 
 ---
 ## Para saber mais
