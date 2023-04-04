@@ -81,7 +81,7 @@ build:
 ``` 
 ## Criando chaves secretas do repositório
 
-- 1 - Vá em settigns
+- 1 - Vá em settings
 - 2 - Ir em environments
 - 3 - Ir em New environment
 
